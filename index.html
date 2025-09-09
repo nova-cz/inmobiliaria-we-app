@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InmoView - Portal Inmobiliario</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-home me-2"></i>InmoView
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-th-large me-1"></i>Catálogo
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="favoritos.html">
+                            <i class="fas fa-heart me-1"></i>Favoritos
+                            <span id="favoritesCount" class="badge bg-danger ms-1">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="comparador.html">
+                            <i class="fas fa-balance-scale me-1"></i>Comparador
+                            <span id="comparatorCount" class="badge bg-primary ms-1">0</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">
+                            <i class="fas fa-envelope me-1"></i>Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="display-4 mb-0">Encuentra tu Hogar Ideal</h1>
+            <p class="lead mb-0">Explora nuestra amplia selección de propiedades</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <!-- Filtros -->
+        <div class="filter-section">
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="form-label">Búsqueda</label>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Ubicación o palabra clave...">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Precio Mínimo</label>
+                    <input type="number" id="minPrice" class="form-control" placeholder="$0">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Precio Máximo</label>
+                    <input type="number" id="maxPrice" class="form-control" placeholder="Sin límite">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Tipo</label>
+                    <select id="propertyType" class="form-select">
+                        <option value="">Todos</option>
+                        <option value="casa">Casa</option>
+                        <option value="departamento">Departamento</option>
+                        <option value="terreno">Terreno</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Recámaras</label>
+                    <select id="bedrooms" class="form-select">
+                        <option value="">Todas</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="col-md-1 d-flex align-items-end">
+                    <button class="btn btn-outline-secondary w-100" onclick="clearFilters()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid de Propiedades -->
+        <div id="propertiesGrid" class="row"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

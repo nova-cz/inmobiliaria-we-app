@@ -1,0 +1,257 @@
+/* Estilos personalizados para InmoView */
+:root {
+    --primary-color: #1a1f36;        /* Azul oscuro elegante */
+    --secondary-color: #4a90e2;      /* Azul brillante */
+    --success-color: #2ecc71;        /* Verde vibrante */
+    --warning-color: #f1c40f;        /* Amarillo cálido */
+    --accent-color: #9b59b6;         /* Toque púrpura */
+    --light-bg: #fdfdfd;             /* Fondo claro */
+    --dark-text: #2c3e50;            /* Texto principal */
+    --muted-text: #7f8c8d;           /* Texto secundario */
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--light-bg);
+    color: var(--dark-text);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--secondary-color) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-color) !important;
+}
+
+/* Cards de Propiedades */
+.property-card {
+    transition: all 0.4s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.property-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+/* Imagen de propiedad */
+.property-image {
+    height: 220px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.property-card:hover .property-image {
+    transform: scale(1.05);
+}
+
+/* Precios y badges */
+.price-tag {
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.property-card:hover .price-tag {
+    transform: scale(1.08);
+}
+
+.badge-custom {
+    background-color: var(--warning-color);
+    color: #111;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 0.3rem 0.6rem;
+}
+
+/* Botones de favoritos */
+.favorite-btn {
+    background: none;
+    border: none;
+    color: #bbb;
+    font-size: 1.6rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.favorite-btn.active,
+.favorite-btn:hover {
+    color: #e74c3c;
+    transform: scale(1.2);
+}
+
+/* Secciones principales */
+.filter-section {
+    background: white;
+    border-radius: 15px;
+    padding: 1.8rem;
+    margin-bottom: 2.2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Tabla de comparación */
+.comparison-table th {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+}
+
+/* Botones especiales */
+.btn-export {
+    background: linear-gradient(135deg, var(--success-color), #27ae60);
+    border: none;
+    color: white;
+    padding: 0.8rem 1.6rem;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-export:hover {
+    background: linear-gradient(135deg, #229954, var(--success-color));
+    transform: translateY(-3px);
+}
+
+/* Formulario de contacto */
+.contact-form {
+    background: white;
+    padding: 2.2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+}
+
+/* Características de propiedades */
+.property-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background-color: #f4f6f8;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Carousel */
+.carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Estados vacíos */
+.empty-state {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--muted-text);
+}
+
+.empty-state i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+    
+    .carousel-item img {
+        height: 260px;
+    }
+}
+
+@media (max-width: 576px) {
+    .feature-item {
+        min-width: 140px;
+        justify-content: center;
+    }
+    
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
